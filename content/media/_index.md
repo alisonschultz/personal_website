@@ -1,10 +1,11 @@
 ---
 title: "Media"
-hidemeta: true
+description: "Interviews, op-eds, and coverage of Alison Schultz's research."
 ---
 
-## Interviews and op-eds
+## Interviews
 
+- [Fuga aos impostos custa 2,3 mil milhões por ano](https://rr.pt/especial/mundo/2026/04/03/fuga-aos-impostos-custa-23-mil-milhoes-por-ano-com-esse-valor-portugal-chegaria-a-neutralidade-carbonica/465412/) — Renascença, 3 Apr 2026.
 - [Tax the Multis: 192 Staaten verhandeln UN-Steuerkonvention](https://www.deutschlandfunk.de/tax-the-multis-192-staaten-verhandeln-un-steuerkonvention-waermeplanung-sozial-100.html) — Deutschlandfunk, 3 Feb 2026.
 - [VBL's real estate investment raises red flag with supervisory authority](https://www.ipe.com/vbls-real-estate-investment-raises-red-flag-with-supervisory-authority/10067747.article) — Investment & Pensions Europe, 7 Jul 2023.
 - [Milliarden für Galápagos](https://www.spiegel.de/wissenschaft/natur/galapagos-inseln-schulden-gegen-naturschutz-kann-das-funktionieren-a-e943eb91-8a02-4e6a-93e1-c4cdb0778846) — *Der Spiegel* 20/2023.

@@ -1,6 +1,4 @@
 ---
 title: "Policy"
-hidemeta: true
+description: "Policy-oriented reports and studies by Alison Schultz."
 ---
-
-Policy-oriented research and reports.

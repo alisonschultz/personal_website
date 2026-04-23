@@ -1,0 +1,94 @@
+baseURL: "https://alisonschultz.com/"
+title: Alison Schultz
+theme: PaperMod
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+pagination:
+  pagerSize: 20
+
+taxonomies:
+    tag: tags
+
+menu:
+    main:
+        - name: Research
+          url: papers/
+          weight: 1
+        - name: Policy
+          url: policy/
+          weight: 2
+        - name: Media
+          url: media/
+          weight: 3
+        - name: CV
+          url: Schultz_CV.pdf
+          weight: 4
+
+params:
+    description: "Alison Schultz — financial economist at the Tax Justice Network. Research on financial markets, financial crime, corporate taxation, wealth taxes, and tax abuse."
+    author: Alison Schultz
+    DateFormat: "January 2006"
+    defaultTheme: light
+    hideFooter: false
+    disableThemeToggle: true
+    ShowShareButtons: false
+    ShowReadingTime: false
+    disableSpecial1stPost: true
+    disableAnchoredHeadings: true
+    ShowPostNavLinks: false
+    ShowBreadCrumbs: false
+    ShowCodeCopyButtons: true
+    ShowAllPagesInArchive: false
+    MainSections: ["papers","policy","media"]
+    ShowToc: false
+    disableScrollToTop: true
+    TocOpen: false
+    ShowWordCount: false
+    UseHugoToc: true
+    comments: false
+    math: false
+    profileMode:
+          enabled: true
+          title: Alison Schultz
+          subtitle: "I am a financial economist at the Tax Justice Network. My research focuses on the real effects of financial markets, financial crime, corporate taxation, wealth taxes, and tax abuse."
+          imageUrl: "Schultz_Alison_4052.jpg"
+          imageWidth: 280
+          imageHeight: 193
+          buttons:
+            - name: Research
+              url: papers/
+            - name: Policy
+              url: policy/
+            - name: Media
+              url: media/
+
+    socialIcons:
+        - name: CV
+          url: Schultz_CV.pdf
+        - name: Email
+          url: mailto:alison@taxjustice.net
+        - name: Google Scholar
+          url: https://scholar.google.com/citations?user=-fYziBEAAAAJ&hl=en
+        - name: GitHub
+          url: https://github.com/alisonschultz
+
+    assets:
+        disableScrollBarStyle: true
+    cover:
+        hiddenInList: true
+        hiddenInSingle: true
+    label:
+      text: "Alison Schultz"
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+    highlight:
+        guessSyntax: true
+        style: autumn
+    tableOfContents:
+        endLevel: 2
+        ordered: false
+        startLevel: 2

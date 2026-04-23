@@ -16,7 +16,22 @@
       "WebFetch(domain:dataverse.harvard.edu)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git branch *)"
+      "Bash(git branch *)",
+      "Bash(git clone *)",
+      "Bash(taskkill //F //IM hugo.exe)",
+      "Bash(git rm *)",
+      "Bash(rm -rf themes public .hugo_build.lock)",
+      "Bash(cp -r /tmp/michaillat/themes .)",
+      "Bash(cp -r /tmp/michaillat/layouts .)",
+      "Bash(cp -r /tmp/michaillat/assets .)",
+      "Bash(cp -r /tmp/michaillat/archetypes .)",
+      "WebFetch(domain:rr.pt)",
+      "WebFetch(domain:papers.ssrn.com)",
+      "WebFetch(domain:cepr.org)",
+      "WebFetch(domain:gabriel-zucman.eu)",
+      "WebFetch(domain:piketty.pse.ens.fr)",
+      "WebFetch(domain:eml.berkeley.edu)",
+      "WebFetch(domain:ralphdehaas.com)"
     ]
   }
 }

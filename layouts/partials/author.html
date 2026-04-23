@@ -1,0 +1,11 @@
+{{- with .Params.author -}}
+  {{- $others := slice -}}
+  {{- range . -}}
+    {{- if ne . "Alison Schultz" -}}
+      {{- $others = $others | append . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $others -}}
+    Coauthored with {{ delimit . ", " ", and " }}
+  {{- end -}}
+{{- end -}}
