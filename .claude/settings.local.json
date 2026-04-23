@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:immanuelfeld.github.io)",
+      "Bash(where hugo *)",
+      "Bash(hugo version *)",
+      "WebFetch(domain:sites.google.com)",
+      "Bash(git --version)",
+      "Bash($HUGO version *)",
+      "Bash(git init *)",
+      "Bash(git submodule *)",
+      "Bash(\"/c/Users/aliso/AppData/Local/Microsoft/WinGet/Packages/Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe/hugo.exe\")",
+      "Bash(\"/c/Users/aliso/AppData/Local/Microsoft/WinGet/Packages/Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe/hugo.exe\" server *)",
+      "WebSearch",
+      "WebFetch(domain:sfs.org)",
+      "WebFetch(domain:dataverse.harvard.edu)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git branch *)"
+    ]
+  }
+}

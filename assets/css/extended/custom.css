@@ -1,0 +1,5 @@
+.profile_inner img.avatar {
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 0;
+}
