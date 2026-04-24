@@ -4,9 +4,9 @@ date: 2023-09-01
 weight: 20
 tags: ["wealth tax","inequality","global"]
 author: ["Miroslav Palanský","Alison Schultz"]
-description: "Presented at the Paris School of Economics Conference. Wealth-tax revenue potential for 173 countries."
-venue: "Presented at Paris School of Economics Conference"
-summary: "A progressive net wealth tax calibrated on Spain's model could raise approximately US$1.9 trillion globally."
+description: "Presented at the Paris School of Economics. Wealth-tax revenue potential for 173 countries."
+venue: "Presented at Paris School of Economics"
+summary: "Using data from the World Inequality Database, we estimate the revenue potential of a moderate, progressive net wealth tax for 173 countries, calibrated on Spain's \"solidarity surcharge.\" We find that such a tax could raise approximately US$1.9 trillion globally — on average, a 6.1% increase in government budgets."
 editPost:
     URL: "https://drive.google.com/file/d/1fYJuJ9tyXPnBKt5DtEIplipi0DT9Z7uN/view?usp=sharing"
     Text: "Working paper"

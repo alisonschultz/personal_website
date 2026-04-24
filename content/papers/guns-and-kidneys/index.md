@@ -6,7 +6,7 @@ tags: ["conflict","organ trafficking","illicit finance"]
 author: ["Alison Schultz"]
 description: "Revise and Resubmit at the Journal of the European Economic Association. Young Economist Award."
 venue: "Revise and Resubmit, Journal of the European Economic Association — EEA Young Economist Award 2022"
-summary: "I investigate the impact of organ trafficking on local conflict using georeferenced data on conflict events and hand-collected data on local transplant infrastructure in countries known for illegal transplanting. Exploiting exogenous variation in kidney demand from the US waiting list for kidneys, I find that higher US kidney demand increases conflict in localities with a transplanting hospital."
+summary: "Transplant tourists travel from high-income countries to lower-income destinations to illegally obtain an organ for financial compensation. I show that non-state armed groups exploit this business to finance their operations: when US kidney demand rises, conflict intensifies in localities with a transplanting hospital."
 editPost:
     URL: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4045584"
     Text: "R&R, Journal of the European Economic Association"
