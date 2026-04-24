@@ -5,7 +5,7 @@ weight: 50
 tags: ["profit shifting","carbon markets","EU ETS","tax abuse"]
 author: ["Alison Schultz"]
 description: "Work in progress. Presented at VfS and IIPF 2024; scheduled for the World Inequality Conference 2026."
-summary: "Using the EU transaction log and Orbis ownership data, I show that internal EU ETS allowance trades within multinational groups spike at year-end, moving from strict to lenient accounting jurisdictions. This pattern is consistent with regulatory arbitrage rather than genuine emission-reduction needs."
+summary: "Using EU transaction log and Orbis ownership data, I show that multinational groups shift EU ETS allowances within the group at year-end, from stricter to more lenient accounting jurisdictions. The pattern is consistent with regulatory arbitrage rather than real compliance needs."
 editPost:
     URL: "#"
     Text: "Work in progress · World Inequality Conference 2026"
