@@ -6,7 +6,7 @@ tags: ["conflict","organ trafficking","illicit finance"]
 author: ["Alison Schultz"]
 description: "Revise and Resubmit at the Journal of the European Economic Association. Young Economist Award."
 venue: "Revise and Resubmit, Journal of the European Economic Association — EEA Young Economist Award 2022"
-summary: "Transplant tourists travel from high-income countries to lower-income destinations to illegally obtain an organ for financial compensation. I show that non-state armed groups exploit this business to finance their operations: when US kidney demand rises, violent attacks by armed actors with a transplant center in their home region intensify."
+summary: "Transplant tourists travel from high-income countries to lower-income destinations to illegally obtain an organ for financial compensation. I show that in countries known for transplant tourism, non-state armed groups exploit this business to finance their operations: when US kidney demand rises, violent attacks by armed actors with a transplant center in their home region intensify."
 editPost:
     URL: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4045584"
     Text: "R&R, Journal of the European Economic Association"
