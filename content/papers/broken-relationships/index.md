@@ -6,9 +6,9 @@ tags: ["correspondent banking","de-risking","international trade","financial mar
 author: ["Lea Borchert","Ralph de Haas","Karolin Kirschenmann","Alison Schultz"]
 description: "Forthcoming in the Review of Financial Studies. How terminated correspondent banking relationships affect international trade."
 venue: "Forthcoming, Review of Financial Studies"
-summary: "We show that when local banks lose access to correspondent banking services, their corporate clients' exports decline; firms only partially substitute with domestic sales, leading to lower revenues, lower employment, and, for some, market exit."
+summary: "When local banks lose access to correspondent banking services, their corporate clients' exports decline. Firms only partially substitute lost exports with domestic sales, resulting in lower total revenues, lower employment, and market exit."
 editPost:
-    URL: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4658618"
+    URL: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4911637"
     Text: "Forthcoming in Review of Financial Studies"
 ---
 
@@ -16,9 +16,8 @@ editPost:
 
 ##### Download
 
-+ [Paper (SSRN)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4658618)
++ [Paper (SSRN)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4911637)
 + [RFS replication package](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2EVES4)
-+ [Code and data (GitHub)](https://github.com/alisonschultz/BrokenRelationships)
 
 ---
 

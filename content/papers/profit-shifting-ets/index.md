@@ -5,7 +5,7 @@ weight: 50
 tags: ["profit shifting","carbon markets","EU ETS","tax abuse"]
 author: ["Alison Schultz"]
 description: "Work in progress. Presented at VfS and IIPF 2024; scheduled for the World Inequality Conference 2026."
-summary: "Abnormally high internal EU ETS allowance trades within the same ownership structures at year-end are consistent with regulatory and tax arbitrage."
+summary: "Using the EU transaction log and Orbis ownership data, I show that internal trades of EU ETS emission allowances within firms under the same Global Ultimate Owner spike at year-end, with allowances moving from subsidiaries in strict accounting jurisdictions to lenient ones — a pattern consistent with regulatory arbitrage rather than genuine emission-reduction needs."
 editPost:
     URL: "#"
     Text: "Work in progress · World Inequality Conference 2026"
