@@ -1,4 +1,5 @@
 public/
+!public/Schultz_CV.pdf
 resources/
 .hugo_build.lock
 node_modules/
