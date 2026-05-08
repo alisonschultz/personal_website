@@ -22,7 +22,6 @@
   body.counter-mode .builder { display: none; }
   body:not(.counter-mode) .wrap { display: none; }
   body:not(.counter-mode) .popout-btn { display: none; }
-  body:not(.counter-mode) .hint { display: none; }
 
   /* --- Builder form --- */
   .builder {
@@ -243,14 +242,31 @@
     font-weight: 700;
     color: var(--fg);
   }
-  .hint {
-    position: fixed;
-    bottom: 0.5rem;
-    right: 0.8rem;
-    font-size: 0.75rem;
+  .pause-hint {
+    margin-top: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(245, 233, 200, 0.06);
     color: var(--muted);
-    opacity: 0.6;
+    border: 1px solid rgba(245, 233, 200, 0.18);
+    border-radius: 6px;
+    padding: 0.45rem 0.85rem;
+    font: 0.9rem "Segoe UI", system-ui, sans-serif;
+    cursor: pointer;
   }
+  .pause-hint:hover { background: rgba(245, 233, 200, 0.14); color: var(--fg); }
+  .pause-hint kbd {
+    display: inline-block;
+    padding: 0.05rem 0.45rem;
+    background: var(--field-bg);
+    border: 1px solid var(--field-border);
+    border-radius: 3px;
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 0.78rem;
+    color: var(--fg);
+  }
+  body.paused .pause-hint { display: none; }
   .popout-btn {
     position: fixed;
     top: 0.5rem;
@@ -283,7 +299,7 @@
   }
   body.in-pip .popout-btn,
   body.in-pip .back-btn,
-  body.in-pip .hint { display: none; }
+  body.in-pip .pause-hint { display: none; }
 
   .compare {
     display: none;
@@ -466,8 +482,13 @@
   <div class="name" id="counterName">–</div>
   <div class="amount" id="amount">–</div>
   <div class="rate" id="rate">–</div>
-  <div class="rate" id="assumptions" data-i18n="counterAssumptions">bei angenommenem exponentiellem Wachstum aus zwei Datenpunkten</div>
+  <div class="rate" id="assumptions" data-i18n="counterAssumptions">bei angenommenem exponentiellem Wachstum (also einer festen jährlichen Wachstumsrate) aus zwei Datenpunkten</div>
   <div class="elapsed" id="elapsed"></div>
+
+  <div class="pause-hint" id="pauseHint">
+    <span data-i18n="pauseHint">Zeit stoppen</span>
+    <kbd data-i18n="keySpace">Leertaste</kbd>
+  </div>
 
   <div class="compare" id="compare">
     <div class="compare-grid">
@@ -487,7 +508,6 @@
   </div>
 </div>
 <a href="./" class="back-btn" id="backBtn" data-i18n="backBtn">← zurück</a>
-<div class="hint" data-i18n="hint">Leertaste oder Klick = Pause</div>
 <button class="popout-btn" id="popoutBtn" data-i18n-attr-title="popoutTitle" title="Schwebendes Fenster (immer im Vordergrund)">📌 Pop-out</button>
 
 <script>
@@ -528,7 +548,7 @@
       statusFail: 'Kopieren fehlgeschlagen — Link unten manuell markieren.',
       kbdHint: 'Tipp: Im laufenden Ticker pausiert ein Klick oder die <kbd>Leertaste</kbd> die Anzeige (so erscheint die Vergleichs-Box).',
       counterLabel: 'Geschätzter Vermögenszuwachs',
-      counterAssumptions: 'bei angenommenem exponentiellem Wachstum aus zwei Datenpunkten',
+      counterAssumptions: 'bei angenommenem exponentiellem Wachstum (also einer festen jährlichen Wachstumsrate) aus zwei Datenpunkten',
       elapsedActive: 'redet schon seit',
       elapsedPaused: 'Redezeit',
       cmpGain: 'Zuwachs:',
@@ -538,7 +558,8 @@
       cmpRate: 'Steuersatz:',
       cmpUserCol: 'Ich',
       backBtn: '← zurück',
-      hint: 'Leertaste oder Klick = Pause',
+      pauseHint: 'Zeit stoppen',
+      keySpace: 'Leertaste',
       pipNotSupported: 'Dieser Browser unterstützt kein Pop-out-Fenster. Bitte Chrome oder Edge verwenden.',
       perMinute: '/ Minute',
       popoutTitle: 'Schwebendes Fenster (immer im Vordergrund)',
@@ -578,7 +599,7 @@
       statusFail: 'Copy failed — please mark the link below manually.',
       kbdHint: 'Tip: While the ticker is running, click or press <kbd>Space</kbd> to pause (the comparison box appears then).',
       counterLabel: 'Estimated wealth growth',
-      counterAssumptions: 'assuming exponential growth from two data points',
+      counterAssumptions: 'assuming exponential growth (i.&nbsp;e. a constant annual growth rate) from two data points',
       elapsedActive: 'has been talking for',
       elapsedPaused: 'Talk time',
       cmpGain: 'Gain:',
@@ -588,7 +609,8 @@
       cmpRate: 'Tax rate:',
       cmpUserCol: 'Me',
       backBtn: '← back',
-      hint: 'Space or click = pause',
+      pauseHint: 'Pause',
+      keySpace: 'Space',
       pipNotSupported: 'This browser does not support pop-out windows. Please use Chrome or Edge.',
       perMinute: '/ minute',
       popoutTitle: 'Floating window (always on top)',
