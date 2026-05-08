@@ -26,6 +26,7 @@
 
   /* --- Builder form --- */
   .builder {
+    position: relative;
     max-width: 720px;
     margin: 0 auto;
     padding: 2.5rem 1.5rem 4rem;
@@ -137,6 +138,51 @@
     text-underline-offset: 2px;
   }
   .builder .help a:hover { filter: brightness(1.2); }
+  .builder .sub {
+    font-size: 0.88rem;
+    color: #c9bfa3;
+    margin: -0.2rem 0 1rem;
+    line-height: 1.5;
+  }
+  .builder kbd {
+    display: inline-block;
+    padding: 0.05rem 0.45rem;
+    background: var(--field-bg);
+    border: 1px solid var(--field-border);
+    border-radius: 3px;
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 0.82rem;
+    color: var(--fg);
+  }
+  .builder .kbd-hint {
+    margin: 1rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .lang-toggle {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.5rem;
+    display: flex;
+  }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--field-border);
+    padding: 0.3rem 0.7rem;
+    font: 0.78rem "Segoe UI", system-ui, sans-serif;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+  }
+  .lang-toggle button:first-child { border-radius: 4px 0 0 4px; border-right: none; }
+  .lang-toggle button:last-child { border-radius: 0 4px 4px 0; }
+  .lang-toggle button.active {
+    background: var(--accent);
+    color: #1a1a1f;
+    border-color: var(--accent);
+  }
+  .lang-toggle button:not(.active):hover { color: var(--fg); }
 
   /* --- Counter (gleiche Optik wie Schwarz-Variante) --- */
   .wrap {
@@ -283,44 +329,57 @@
 
 <!-- ============ BUILDER (Formular) ============ -->
 <div class="builder" id="builder">
-  <h1>Vermögens-Ticker — eigene Werte</h1>
-  <p class="lede">
-    Trag deine Werte ein und starte die Vorschau, oder kopiere den Link, um den Counter
-    zu teilen oder als Lesezeichen zu speichern.
+  <div class="lang-toggle" id="langToggle">
+    <button type="button" data-lang="de">DE</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+
+  <h1 data-i18n="h1">Vermögens-Ticker — eigene Werte</h1>
+  <p class="lede" data-i18n="lede">
+    Der Ticker zeigt live, wie das Vermögen einer reichen Person wächst — z.&nbsp;B. während
+    eines Vortrags. Optional vergleicht er das mit deinem eigenen Verdienst und der
+    Steuerlast in derselben Zeit. Trag unten deine Werte ein, starte die Vorschau, und
+    kopiere den Link zum Teilen oder als Lesezeichen.
   </p>
 
   <form id="form" autocomplete="off">
     <fieldset>
-      <legend>Person</legend>
+      <legend data-i18n="fsPerson">Person</legend>
+      <p class="sub" data-i18n="subPerson">Wessen Vermögensentwicklung soll gezeigt werden?</p>
       <label>
-        <span class="lbl-text">Name</span>
+        <span class="lbl-text" data-i18n="lblName">Name (so wie er im Ticker erscheinen soll)</span>
         <input type="text" name="name" value="Dieter Schwarz">
       </label>
     </fieldset>
 
     <fieldset>
-      <legend>Vermögen (zwei Datenpunkte für die Hochrechnung)</legend>
+      <legend data-i18n="fsWealth">Vermögen</legend>
+      <p class="sub" data-i18n="subWealth">
+        Zwei Vermögensstände, aus denen die jährliche Wachstumsrate berechnet wird —
+        z.&nbsp;B. die Forbes-Werte für zwei aufeinanderfolgende Jahre.
+      </p>
       <div class="grid-2">
         <label>
-          <span class="lbl-text">Jahr 1</span>
+          <span class="lbl-text" data-i18n="lblY1">Jahr 1</span>
           <input type="number" name="y1" value="2025" step="1">
         </label>
         <label>
-          <span class="lbl-text">Vermögen Jahr 1 (Mrd.)</span>
+          <span class="lbl-text" data-i18n="lblW1">Vermögen Jahr 1 (in Mrd.)</span>
           <input type="number" name="w1" value="37.72" step="0.01">
         </label>
         <label>
-          <span class="lbl-text">Jahr 2</span>
+          <span class="lbl-text" data-i18n="lblY2">Jahr 2</span>
           <input type="number" name="y2" value="2026" step="1">
         </label>
         <label>
-          <span class="lbl-text">Vermögen Jahr 2 (Mrd.)</span>
+          <span class="lbl-text" data-i18n="lblW2">Vermögen Jahr 2 (in Mrd.)</span>
           <input type="number" name="w2" value="61.82" step="0.01">
         </label>
       </div>
-      <p class="help">
-        In der Währung, die du unten einstellst. Der Ticker rechnet unter Annahme von exponentiellem Wachstum (also einer festen Wachstumsrate) zwischen den beiden Werten hoch.
-        Vermögen von Milliardär:innen findest du z.&nbsp;B. bei
+      <p class="help" data-i18n="helpWealth">
+        Werte in der Währung eintragen, die du unten einstellst. Der Ticker rechnet unter
+        Annahme von exponentiellem Wachstum (also einer festen jährlichen Wachstumsrate)
+        zwischen den beiden Werten hoch. Vermögen von Milliardär:innen findest du z.&nbsp;B. bei
         <a href="https://www.forbes.com/billionaires/" target="_blank" rel="noopener">Forbes — The World's Billionaires</a>
         oder live bei
         <a href="https://www.forbes.com/real-time-billionaires/" target="_blank" rel="noopener">Forbes Real-Time Billionaires</a>.
@@ -328,41 +387,58 @@
     </fieldset>
 
     <fieldset>
-      <legend>Format</legend>
+      <legend data-i18n="fsSpeaker">Du als Redner:in</legend>
+      <p class="sub" data-i18n="subSpeaker">
+        Wie soll der Ticker dich ansprechen? Wird im Hinweistext
+        „🥱 <em>Sie</em> redet schon seit …" verwendet.
+      </p>
+      <label>
+        <span class="lbl-text" data-i18n="lblPronoun">Pronomen (z.&nbsp;B. Sie, Er, They)</span>
+        <input type="text" name="pronoun" value="Sie">
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend data-i18n="fsFormat">Anzeige-Format</legend>
+      <p class="sub" data-i18n="subFormat">Wie Geldbeträge dargestellt werden — Währungssymbol, Tausender-Trennzeichen, Sprache.</p>
       <div class="grid-2">
         <label>
-          <span class="lbl-text">Währung (ISO-Code)</span>
+          <span class="lbl-text" data-i18n="lblCurrency">Währung (ISO-Code, z.&nbsp;B. EUR, USD, GBP)</span>
           <input type="text" name="currency" value="EUR">
         </label>
         <label>
-          <span class="lbl-text">Locale (z.B. de-DE, en-US)</span>
+          <span class="lbl-text" data-i18n="lblLocale">Sprache/Region (z.&nbsp;B. de-DE, en-US)</span>
           <input type="text" name="locale" value="de-DE">
         </label>
       </div>
     </fieldset>
 
     <fieldset>
-      <legend>Vergleich (optional)</legend>
+      <legend data-i18n="fsCompare">Vergleich mit eigenem Verdienst und Besteuerung (optional)</legend>
+      <p class="sub" data-i18n="subCompare">
+        Stellt deinem Verdienst während der Redezeit den Vermögenszuwachs der Person gegenüber —
+        und zeigt, wie viel Steuer auf beiden Seiten anfällt. Erscheint, sobald du den Ticker
+        pausierst (Klick oder Leertaste).
+      </p>
       <label class="inline">
         <input type="checkbox" name="compare" id="compareBox" checked>
-        Vergleichs-Box bei Pause anzeigen
+        <span data-i18n="lblCompareToggle">Vergleich aktivieren</span>
       </label>
       <div class="grid-2">
         <label>
-          <span class="lbl-text">Steuersatz Person (0–1)</span>
+          <span class="lbl-text" data-i18n="lblPersonTax">Effektiver Steuersatz der Person (0–1, z.&nbsp;B. 0 = unversteuert, 0.26 = ⌀ dt. Milliardäre)</span>
           <input type="number" name="taxRate" value="0" step="0.01" min="0" max="1">
         </label>
         <label>
-          <span class="lbl-text">Eigener Stundenlohn</span>
+          <span class="lbl-text" data-i18n="lblHourly">Dein Bruttostundenlohn (z.&nbsp;B. 27.80)</span>
           <input type="number" name="userHourly" value="27.80" step="0.01">
         </label>
         <label>
-          <span class="lbl-text">Eigener Steuersatz inkl. SV (0–1)</span>
+          <span class="lbl-text" data-i18n="lblUserTax">Dein Steuer- + Sozialabgabensatz (0–1, z.&nbsp;B. 0.32)</span>
           <input type="number" name="userTaxRate" value="0.323" step="0.01" min="0" max="1">
         </label>
       </div>
-      <p class="help">
-        Die Vergleichs-Box erscheint, wenn der Ticker pausiert wird (Klick oder Leertaste).
+      <p class="help" data-i18n="helpCompare">
         Deinen eigenen Steuersatz inkl. Sozialabgaben kannst du z.&nbsp;B. mit dem
         <a href="https://www.bmf-steuerrechner.de/ekst/eingabeformekst.xhtml" target="_blank" rel="noopener">Einkommensteuer-Rechner des BMF</a>
         oder einem Brutto-Netto-Rechner wie
@@ -373,76 +449,264 @@
   </form>
 
   <div class="actions">
-    <button type="button" id="previewBtn">Vorschau starten</button>
-    <button type="button" class="secondary" id="copyBtn">Link kopieren</button>
+    <button type="button" id="previewBtn" data-i18n="btnPreview">Vorschau starten</button>
+    <button type="button" class="secondary" id="copyBtn" data-i18n="btnCopy">Link kopieren</button>
     <span class="status" id="copyStatus"></span>
   </div>
+  <p class="kbd-hint" data-i18n="kbdHint">
+    Tipp: Im laufenden Ticker pausiert ein Klick oder die <kbd>Leertaste</kbd>
+    die Anzeige (so erscheint die Vergleichs-Box).
+  </p>
   <div class="share-url" id="shareUrl"></div>
 </div>
 
 <!-- ============ COUNTER ============ -->
 <div class="wrap" id="wrap">
-  <div class="label" id="counterLabel">Geschätzter Vermögenszuwachs</div>
+  <div class="label" id="counterLabel" data-i18n="counterLabel">Geschätzter Vermögenszuwachs</div>
   <div class="name" id="counterName">–</div>
   <div class="amount" id="amount">–</div>
   <div class="rate" id="rate">–</div>
-  <div class="rate" id="assumptions">bei angenommenem exponentiellem Wachstum aus zwei Datenpunkten</div>
+  <div class="rate" id="assumptions" data-i18n="counterAssumptions">bei angenommenem exponentiellem Wachstum aus zwei Datenpunkten</div>
   <div class="elapsed" id="elapsed"></div>
 
   <div class="compare" id="compare">
     <div class="compare-grid">
       <div>
         <div class="col-title" id="cmpPersonTitle">Person</div>
-        <div class="row"><span class="lbl">Zuwachs:</span> <span class="val" id="cmpPersonGain">–</span></div>
-        <div class="row"><span class="lbl">Steuer:</span> <span class="val" id="cmpPersonTax">–</span></div>
-        <div class="row sub"><span class="lbl">Steuersatz:</span> <span class="val" id="cmpPersonRate">–</span></div>
+        <div class="row"><span class="lbl" data-i18n="cmpGain">Zuwachs:</span> <span class="val" id="cmpPersonGain">–</span></div>
+        <div class="row"><span class="lbl" data-i18n="cmpTax">Steuer:</span> <span class="val" id="cmpPersonTax">–</span></div>
+        <div class="row sub"><span class="lbl" data-i18n="cmpRate">Steuersatz:</span> <span class="val" id="cmpPersonRate">–</span></div>
       </div>
       <div>
-        <div class="col-title">Ich</div>
-        <div class="row"><span class="lbl">Verdienst:</span> <span class="val" id="cmpUserGain">–</span></div>
-        <div class="row"><span class="lbl">Steuer + Sozialabgaben:</span> <span class="val" id="cmpUserTax">–</span></div>
-        <div class="row sub"><span class="lbl">Steuersatz:</span> <span class="val" id="cmpUserRate">–</span></div>
+        <div class="col-title" id="cmpUserTitle" data-i18n="cmpUserCol">Ich</div>
+        <div class="row"><span class="lbl" data-i18n="cmpUserGainLbl">Verdienst:</span> <span class="val" id="cmpUserGain">–</span></div>
+        <div class="row"><span class="lbl" data-i18n="cmpUserTaxLbl">Steuer + Sozialabgaben:</span> <span class="val" id="cmpUserTax">–</span></div>
+        <div class="row sub"><span class="lbl" data-i18n="cmpRate">Steuersatz:</span> <span class="val" id="cmpUserRate">–</span></div>
       </div>
     </div>
   </div>
 </div>
-<a href="./" class="back-btn" id="backBtn">← zurück</a>
-<div class="hint">Leertaste oder Klick = Pause</div>
-<button class="popout-btn" id="popoutBtn" title="Schwebendes Fenster (immer im Vordergrund)">📌 Pop-out</button>
+<a href="./" class="back-btn" id="backBtn" data-i18n="backBtn">← zurück</a>
+<div class="hint" data-i18n="hint">Leertaste oder Klick = Pause</div>
+<button class="popout-btn" id="popoutBtn" data-i18n-attr-title="popoutTitle" title="Schwebendes Fenster (immer im Vordergrund)">📌 Pop-out</button>
 
 <script>
-  const PARAM_KEYS = ['name','y1','w1','y2','w2','currency','locale','taxRate','userHourly','userTaxRate','compare'];
+  // ============ I18N ============
+  const I18N = {
+    de: {
+      htmlLang: 'de',
+      title: 'Vermögens-Ticker — anpassbar',
+      h1: 'Vermögens-Ticker — eigene Werte',
+      lede: 'Der Ticker zeigt live, wie das Vermögen einer reichen Person wächst — z.&nbsp;B. während eines Vortrags. Optional vergleicht er das mit deinem eigenen Verdienst und der Steuerlast in derselben Zeit. Trag unten deine Werte ein, starte die Vorschau, und kopiere den Link zum Teilen oder als Lesezeichen.',
+      fsPerson: 'Person',
+      subPerson: 'Wessen Vermögensentwicklung soll gezeigt werden?',
+      lblName: 'Name (so wie er im Ticker erscheinen soll)',
+      fsWealth: 'Vermögen',
+      subWealth: 'Zwei Vermögensstände, aus denen die jährliche Wachstumsrate berechnet wird — z.&nbsp;B. die Forbes-Werte für zwei aufeinanderfolgende Jahre.',
+      lblY1: 'Jahr 1',
+      lblW1: 'Vermögen Jahr 1 (in Mrd.)',
+      lblY2: 'Jahr 2',
+      lblW2: 'Vermögen Jahr 2 (in Mrd.)',
+      helpWealth: 'Werte in der Währung eintragen, die du unten einstellst. Der Ticker rechnet unter Annahme von exponentiellem Wachstum (also einer festen jährlichen Wachstumsrate) zwischen den beiden Werten hoch. Vermögen von Milliardär:innen findest du z.&nbsp;B. bei <a href="https://www.forbes.com/billionaires/" target="_blank" rel="noopener">Forbes — The World\'s Billionaires</a> oder live bei <a href="https://www.forbes.com/real-time-billionaires/" target="_blank" rel="noopener">Forbes Real-Time Billionaires</a>.',
+      fsSpeaker: 'Du als Redner:in',
+      subSpeaker: 'Wie soll der Ticker dich ansprechen? Wird im Hinweistext „🥱 <em>Sie</em> redet schon seit …" verwendet.',
+      lblPronoun: 'Pronomen (z.&nbsp;B. Sie, Er, They)',
+      fsFormat: 'Anzeige-Format',
+      subFormat: 'Wie Geldbeträge dargestellt werden — Währungssymbol, Tausender-Trennzeichen, Sprache.',
+      lblCurrency: 'Währung (ISO-Code, z.&nbsp;B. EUR, USD, GBP)',
+      lblLocale: 'Sprache/Region (z.&nbsp;B. de-DE, en-US)',
+      fsCompare: 'Vergleich mit eigenem Verdienst und Besteuerung (optional)',
+      subCompare: 'Stellt deinem Verdienst während der Redezeit den Vermögenszuwachs der Person gegenüber — und zeigt, wie viel Steuer auf beiden Seiten anfällt. Erscheint, sobald du den Ticker pausierst (Klick oder Leertaste).',
+      lblCompareToggle: 'Vergleich aktivieren',
+      lblPersonTax: 'Effektiver Steuersatz der Person (0–1, z.&nbsp;B. 0 = unversteuert, 0.26 = ⌀ dt. Milliardäre)',
+      lblHourly: 'Dein Bruttostundenlohn (z.&nbsp;B. 27.80)',
+      lblUserTax: 'Dein Steuer- + Sozialabgabensatz (0–1, z.&nbsp;B. 0.32)',
+      helpCompare: 'Deinen eigenen Steuersatz inkl. Sozialabgaben kannst du z.&nbsp;B. mit dem <a href="https://www.bmf-steuerrechner.de/ekst/eingabeformekst.xhtml" target="_blank" rel="noopener">Einkommensteuer-Rechner des BMF</a> oder einem Brutto-Netto-Rechner wie <a href="https://www.brutto-netto-rechner.info/" target="_blank" rel="noopener">brutto-netto-rechner.info</a> ermitteln.',
+      btnPreview: 'Vorschau starten',
+      btnCopy: 'Link kopieren',
+      statusCopied: 'Link kopiert ✓',
+      statusFail: 'Kopieren fehlgeschlagen — Link unten manuell markieren.',
+      kbdHint: 'Tipp: Im laufenden Ticker pausiert ein Klick oder die <kbd>Leertaste</kbd> die Anzeige (so erscheint die Vergleichs-Box).',
+      counterLabel: 'Geschätzter Vermögenszuwachs',
+      counterAssumptions: 'bei angenommenem exponentiellem Wachstum aus zwei Datenpunkten',
+      elapsedActive: 'redet schon seit',
+      elapsedPaused: 'Redezeit',
+      cmpGain: 'Zuwachs:',
+      cmpTax: 'Steuer:',
+      cmpUserGainLbl: 'Verdienst:',
+      cmpUserTaxLbl: 'Steuer + Sozialabgaben:',
+      cmpRate: 'Steuersatz:',
+      cmpUserCol: 'Ich',
+      backBtn: '← zurück',
+      hint: 'Leertaste oder Klick = Pause',
+      pipNotSupported: 'Dieser Browser unterstützt kein Pop-out-Fenster. Bitte Chrome oder Edge verwenden.',
+      perMinute: '/ Minute',
+      popoutTitle: 'Schwebendes Fenster (immer im Vordergrund)',
+    },
+    en: {
+      htmlLang: 'en',
+      title: 'Wealth Ticker — customizable',
+      h1: 'Wealth Ticker — your values',
+      lede: 'The ticker shows live how a wealthy person\'s fortune grows — e.&nbsp;g. during a talk. It can also compare this with your own earnings and tax burden over the same time. Enter your values below, start the preview, and copy the link to share or bookmark.',
+      fsPerson: 'Person',
+      subPerson: 'Whose wealth growth should be shown?',
+      lblName: 'Name (as it appears in the ticker)',
+      fsWealth: 'Wealth',
+      subWealth: 'Two wealth values used to compute the annual growth rate — e.&nbsp;g. Forbes figures for two consecutive years.',
+      lblY1: 'Year 1',
+      lblW1: 'Wealth in year 1 (in billion)',
+      lblY2: 'Year 2',
+      lblW2: 'Wealth in year 2 (in billion)',
+      helpWealth: 'Enter values in the currency you choose below. The ticker assumes exponential growth (a fixed annual growth rate) between the two values. You can find billionaires\' wealth at <a href="https://www.forbes.com/billionaires/" target="_blank" rel="noopener">Forbes — The World\'s Billionaires</a> or live at <a href="https://www.forbes.com/real-time-billionaires/" target="_blank" rel="noopener">Forbes Real-Time Billionaires</a>.',
+      fsSpeaker: 'You as the speaker',
+      subSpeaker: 'How should the ticker refer to you? Used in the hint "🥱 <em>She</em> has been talking for …".',
+      lblPronoun: 'Pronoun (e.&nbsp;g. She, He, They)',
+      fsFormat: 'Display format',
+      subFormat: 'How money values are displayed — currency symbol, thousands separator, language.',
+      lblCurrency: 'Currency (ISO code, e.&nbsp;g. EUR, USD, GBP)',
+      lblLocale: 'Language/region (e.&nbsp;g. de-DE, en-US)',
+      fsCompare: 'Comparison with your earnings and taxes (optional)',
+      subCompare: 'Puts your earnings during the talk next to the person\'s wealth gain — and shows the tax burden on each side. Appears as soon as you pause the ticker (click or Space).',
+      lblCompareToggle: 'Enable comparison',
+      lblPersonTax: 'Effective tax rate on the person\'s wealth gain (0–1, e.&nbsp;g. 0 = untaxed, 0.26 = avg. German billionaires)',
+      lblHourly: 'Your gross hourly wage (e.&nbsp;g. 27.80)',
+      lblUserTax: 'Your income tax + payroll rate (0–1, e.&nbsp;g. 0.32)',
+      helpCompare: 'You can find your tax + payroll rate using e.&nbsp;g. <a href="https://smartasset.com/taxes/income-taxes" target="_blank" rel="noopener">SmartAsset (US)</a> or <a href="https://www.gov.uk/estimate-income-tax" target="_blank" rel="noopener">HMRC Income Tax Estimator (UK)</a>.',
+      btnPreview: 'Start preview',
+      btnCopy: 'Copy link',
+      statusCopied: 'Link copied ✓',
+      statusFail: 'Copy failed — please mark the link below manually.',
+      kbdHint: 'Tip: While the ticker is running, click or press <kbd>Space</kbd> to pause (the comparison box appears then).',
+      counterLabel: 'Estimated wealth growth',
+      counterAssumptions: 'assuming exponential growth from two data points',
+      elapsedActive: 'has been talking for',
+      elapsedPaused: 'Talk time',
+      cmpGain: 'Gain:',
+      cmpTax: 'Tax:',
+      cmpUserGainLbl: 'Earned:',
+      cmpUserTaxLbl: 'Tax + payroll:',
+      cmpRate: 'Tax rate:',
+      cmpUserCol: 'Me',
+      backBtn: '← back',
+      hint: 'Space or click = pause',
+      pipNotSupported: 'This browser does not support pop-out windows. Please use Chrome or Edge.',
+      perMinute: '/ minute',
+      popoutTitle: 'Floating window (always on top)',
+    },
+  };
+
+  // Default values per language (only applied when user hasn't customised them)
+  const LANG_DEFAULTS = {
+    de: { locale: 'de-DE', currency: 'EUR', pronoun: 'Sie' },
+    en: { locale: 'en-US', currency: 'USD', pronoun: 'She' },
+  };
+
+  let currentLang = 'de';
+
+  function applyLang(lang) {
+    if (!I18N[lang]) lang = 'de';
+    currentLang = lang;
+    const dict = I18N[lang];
+    document.documentElement.lang = dict.htmlLang;
+    document.title = dict.title;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] != null) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-attr-title]').forEach(el => {
+      const key = el.getAttribute('data-i18n-attr-title');
+      if (dict[key] != null) el.title = dict[key];
+    });
+
+    // Active toggle button
+    document.querySelectorAll('#langToggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+
+    // Update language-dependent defaults if user hasn't changed them yet
+    syncLangDefaults(lang);
+
+    // Re-render share link
+    if (document.getElementById('shareUrl')) updateShareLink();
+
+    // If counter is currently running, refresh its visible labels
+    if (activeCfg) refreshCounterLabels();
+  }
+
+  // Track which fields are still at their language-default values, so language toggle
+  // can swap them without overwriting user-typed values.
+  function syncLangDefaults(lang) {
+    const newD = LANG_DEFAULTS[lang];
+    const otherD = LANG_DEFAULTS[lang === 'de' ? 'en' : 'de'];
+    const fields = ['locale', 'currency', 'pronoun'];
+    fields.forEach(name => {
+      const input = document.querySelector(`[name="${name}"]`);
+      if (!input) return;
+      // If current value is empty or matches the OTHER language's default, swap to new default.
+      if (!input.value.trim() || input.value === otherD[name]) {
+        input.value = newD[name];
+      }
+    });
+  }
+
+  function refreshCounterLabels() {
+    const dict = I18N[currentLang];
+    document.getElementById('counterLabel').innerHTML = dict.counterLabel;
+    document.getElementById('assumptions').innerHTML = dict.counterAssumptions;
+    document.getElementById('cmpUserTitle').innerHTML = dict.cmpUserCol;
+    document.querySelectorAll('[data-i18n="cmpGain"]').forEach(e => e.innerHTML = dict.cmpGain);
+    document.querySelectorAll('[data-i18n="cmpTax"]').forEach(e => e.innerHTML = dict.cmpTax);
+    document.querySelectorAll('[data-i18n="cmpRate"]').forEach(e => e.innerHTML = dict.cmpRate);
+    document.querySelectorAll('[data-i18n="cmpUserGainLbl"]').forEach(e => e.innerHTML = dict.cmpUserGainLbl);
+    document.querySelectorAll('[data-i18n="cmpUserTaxLbl"]').forEach(e => e.innerHTML = dict.cmpUserTaxLbl);
+    document.getElementById('backBtn').innerHTML = dict.backBtn;
+    document.querySelector('.hint').innerHTML = dict.hint;
+    if (activeCfg && fmtPercent) {
+      document.getElementById('cmpPersonRate').textContent = fmtPercent.format(activeCfg.taxRate);
+      document.getElementById('cmpUserRate').textContent = fmtPercent.format(activeCfg.userTaxRate);
+    }
+  }
+
+  // ============ Form / URL plumbing ============
+  const PARAM_KEYS = ['lang','name','y1','w1','y2','w2','currency','locale','pronoun','taxRate','userHourly','userTaxRate','compare'];
 
   function readForm() {
     const f = document.getElementById('form');
     const fd = new FormData(f);
-    const cfg = {
+    const langDef = LANG_DEFAULTS[currentLang];
+    return {
+      lang: currentLang,
       name: (fd.get('name') || '').trim() || 'Person',
       y1: +fd.get('y1'),
       w1: +fd.get('w1'),
       y2: +fd.get('y2'),
       w2: +fd.get('w2'),
-      currency: (fd.get('currency') || 'EUR').trim() || 'EUR',
-      locale: (fd.get('locale') || 'de-DE').trim() || 'de-DE',
+      currency: (fd.get('currency') || langDef.currency).trim() || langDef.currency,
+      locale: (fd.get('locale') || langDef.locale).trim() || langDef.locale,
+      pronoun: (fd.get('pronoun') || langDef.pronoun).trim() || langDef.pronoun,
       taxRate: +fd.get('taxRate') || 0,
       userHourly: +fd.get('userHourly') || 0,
       userTaxRate: +fd.get('userTaxRate') || 0,
       compare: document.getElementById('compareBox').checked,
     };
-    return cfg;
   }
 
   function readURL() {
     const p = new URLSearchParams(location.search);
     if (![...p.keys()].length) return null;
+    const lang = (p.get('lang') === 'en') ? 'en' : 'de';
+    const langDef = LANG_DEFAULTS[lang];
     return {
+      lang,
       name: p.get('name') || 'Person',
       y1: +(p.get('y1') ?? 2025),
       w1: +(p.get('w1') ?? 1),
       y2: +(p.get('y2') ?? 2026),
       w2: +(p.get('w2') ?? 2),
-      currency: p.get('currency') || 'EUR',
-      locale: p.get('locale') || 'de-DE',
+      currency: p.get('currency') || langDef.currency,
+      locale: p.get('locale') || langDef.locale,
+      pronoun: p.get('pronoun') || langDef.pronoun,
       taxRate: +(p.get('taxRate') ?? 0),
       userHourly: +(p.get('userHourly') ?? 0),
       userTaxRate: +(p.get('userTaxRate') ?? 0),
@@ -454,6 +718,7 @@
     const u = new URL(location.href);
     u.search = '';
     const p = u.searchParams;
+    p.set('lang', cfg.lang);
     p.set('name', cfg.name);
     p.set('y1', cfg.y1);
     p.set('w1', cfg.w1);
@@ -461,6 +726,7 @@
     p.set('w2', cfg.w2);
     p.set('currency', cfg.currency);
     p.set('locale', cfg.locale);
+    p.set('pronoun', cfg.pronoun);
     p.set('taxRate', cfg.taxRate);
     p.set('userHourly', cfg.userHourly);
     p.set('userTaxRate', cfg.userTaxRate);
@@ -468,7 +734,7 @@
     return u.toString();
   }
 
-  // ----- Counter engine -----
+  // ============ Counter engine ============
   let rafId = null;
   let paused = false;
   let pauseStartTime = null;
@@ -542,15 +808,19 @@
   }
 
   function formatElapsed(ms, isPaused) {
+    const dict = I18N[currentLang];
     const totalSeconds = Math.floor(ms / 1000);
     const m = Math.floor(totalSeconds / 60);
     const s = totalSeconds % 60;
     const time = `${m} min ${s.toString().padStart(2, '0')} s`;
-    const prefix = isPaused ? 'Redezeit' : '🥱 Sie redet schon seit';
+    const prefix = isPaused
+      ? dict.elapsedPaused
+      : `🥱 ${activeCfg.pronoun} ${dict.elapsedActive}`;
     return `<span class="prefix">${prefix}</span><span class="time">${time}</span>`;
   }
 
   function tick() {
+    const dict = I18N[currentLang];
     const now = effectiveNow();
     const elapsed = now - startTime;
     const currentWealth = wealthAt(now);
@@ -558,7 +828,7 @@
     const ratePerMinute = currentWealth * k * 60000;
 
     document.getElementById('amount').textContent = '+' + fmtMoney0.format(increase);
-    document.getElementById('rate').textContent = '≈ ' + fmtMoney0.format(ratePerMinute) + ' / Minute';
+    document.getElementById('rate').textContent = '≈ ' + fmtMoney0.format(ratePerMinute) + ' ' + dict.perMinute;
     document.getElementById('elapsed').innerHTML = formatElapsed(elapsed, paused);
 
     if (activeCfg.compare) {
@@ -574,7 +844,7 @@
     rafId = requestAnimationFrame(tick);
   }
 
-  // ----- Pause / Pop-out -----
+  // ============ Pause / Pop-out ============
   let inPip = false;
   let pipBody = null;
   const wrapEl = document.getElementById('wrap');
@@ -609,7 +879,7 @@
 
   async function popOut() {
     if (!('documentPictureInPicture' in window)) {
-      alert('Dieser Browser unterstützt kein Pop-out-Fenster. Bitte Chrome oder Edge verwenden.');
+      alert(I18N[currentLang].pipNotSupported);
       return;
     }
     const pip = await documentPictureInPicture.requestWindow({ width: 480, height: 360 });
@@ -636,7 +906,7 @@
   }
   document.getElementById('popoutBtn').addEventListener('click', popOut);
 
-  // ----- Form handlers -----
+  // ============ Form handlers ============
   function updateShareLink() {
     const cfg = readForm();
     document.getElementById('shareUrl').textContent = buildShareURL(cfg);
@@ -653,28 +923,40 @@
 
   document.getElementById('copyBtn').addEventListener('click', async () => {
     const url = buildShareURL(readForm());
+    const dict = I18N[currentLang];
     try {
       await navigator.clipboard.writeText(url);
-      document.getElementById('copyStatus').textContent = 'Link kopiert ✓';
+      document.getElementById('copyStatus').textContent = dict.statusCopied;
       setTimeout(() => document.getElementById('copyStatus').textContent = '', 2500);
     } catch {
-      document.getElementById('copyStatus').textContent = 'Kopieren fehlgeschlagen — Link unten manuell markieren.';
+      document.getElementById('copyStatus').textContent = dict.statusFail;
     }
   });
 
   document.getElementById('backBtn').addEventListener('click', (e) => {
-    if (location.search) return; // navigate to base /counter/custom/
+    if (location.search) return;
     e.preventDefault();
     document.body.classList.remove('counter-mode');
     if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
   });
 
-  // ----- Initial state -----
+  document.querySelectorAll('#langToggle button').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  // ============ Initial state ============
+  const urlParams = new URLSearchParams(location.search);
   const urlCfg = readURL();
-  if (urlCfg) {
+  const launchCounter = urlParams.has('name');
+  if (urlCfg && launchCounter) {
+    applyLang(urlCfg.lang);
     document.body.classList.add('counter-mode');
     setupCounter(urlCfg);
+  } else if (urlParams.has('lang')) {
+    applyLang(urlParams.get('lang') === 'en' ? 'en' : 'de');
+    updateShareLink();
   } else {
+    applyLang('de');
     updateShareLink();
   }
 </script>
