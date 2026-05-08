@@ -82,12 +82,22 @@
     color: var(--fg);
   }
   .hint {
-    position: absolute;
-    bottom: 0.5rem;
-    right: 0.8rem;
-    font-size: 0.75rem;
-    color: var(--muted);
-    opacity: 0.6;
+    position: fixed;
+    bottom: 0.7rem;
+    right: 0.9rem;
+    font-size: 0.9rem;
+    color: #c9bfa3;
+  }
+  .hint kbd {
+    display: inline-block;
+    padding: 0.05rem 0.45rem;
+    margin: 0 0.15rem;
+    background: rgba(245, 233, 200, 0.08);
+    border: 1px solid rgba(245, 233, 200, 0.3);
+    border-radius: 3px;
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 0.8rem;
+    color: var(--fg);
   }
   .popout-btn {
     position: fixed;
@@ -205,7 +215,7 @@
       </div>
     </div>
   </div>
-  <div class="hint">Leertaste oder Klick = Pause</div>
+  <div class="hint"><kbd>Leertaste</kbd> oder Klick = Pause</div>
   <a href="./custom/" class="custom-btn">✏️ Eigene Werte eintragen</a>
   <button class="popout-btn" id="popoutBtn" title="Schwebendes Fenster (immer im Vordergrund)">📌 Pop-out</button>
 
