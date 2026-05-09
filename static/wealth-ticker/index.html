@@ -130,8 +130,26 @@
     -webkit-app-region: no-drag;
   }
   .custom-btn:hover { background: rgba(245, 233, 200, 0.18); }
+  .lang-link {
+    position: fixed;
+    top: 0.5rem;
+    right: 7rem;
+    z-index: 10;
+    background: rgba(245, 233, 200, 0.08);
+    color: var(--fg);
+    border: 1px solid rgba(245, 233, 200, 0.25);
+    border-radius: 6px;
+    padding: 0.35rem 0.7rem;
+    font: 0.8rem "Segoe UI", system-ui, sans-serif;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-app-region: no-drag;
+  }
+  .lang-link:hover { background: rgba(245, 233, 200, 0.18); }
   body.in-pip .popout-btn,
   body.in-pip .custom-btn,
+  body.in-pip .lang-link,
   body.in-pip .hint { display: none; }
 
   .compare {
@@ -217,6 +235,7 @@
   </div>
   <div class="hint"><kbd>Leertaste</kbd> oder Klick = Pause</div>
   <a href="./custom/" class="custom-btn">✏️ Eigene Werte eintragen</a>
+  <a href="./en/" class="lang-link" title="English version">EN</a>
   <button class="popout-btn" id="popoutBtn" title="Schwebendes Fenster (immer im Vordergrund)">📌 Pop-out</button>
 
 <script>
