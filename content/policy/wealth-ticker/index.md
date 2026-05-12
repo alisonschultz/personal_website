@@ -10,11 +10,13 @@ editPost:
     Text: "Open the ticker"
 ---
 
----
+<iframe src="/wealth-ticker/" title="Billionaire wealth ticker"
+  style="width:100%;height:520px;border:1px solid rgba(0,0,0,0.15);border-radius:8px;display:block;"></iframe>
 
-##### Open
-
-+ [Launch the wealth ticker &rarr;](/wealth-ticker/)
+<p style="margin-top:0.6rem;font-size:0.85rem;">
+  <a href="/wealth-ticker/">Open it full-page &rarr;</a> &nbsp;·&nbsp;
+  <a href="/wealth-ticker/custom/">Editable version</a>
+</p>
 
 ---
 
@@ -24,12 +26,9 @@ A small interactive piece, made for talks and presentations. It fits an
 exponential curve through recent Forbes net-worth estimates for Lidl founder
 Dieter Schwarz and then runs a live counter showing how much that fortune has
 grown since you opened the page. There is a pause/"speech time" mode for use
-during a talk, a pop-out window, and an [editable version](/wealth-ticker/custom/)
-where you can drop in your own figures.
+during a talk, a pop-out window, and an editable version where you can drop in
+your own figures.
 
 It is meant as an illustration, not a measurement: real fortunes do not grow at
 a perfectly constant rate, and unrealised gains like these are largely untaxed
 in Germany. That is rather the point.
-
-<iframe src="/wealth-ticker/" title="Billionaire wealth ticker" loading="lazy"
-  style="width:100%;height:460px;border:1px solid rgba(0,0,0,0.15);border-radius:8px;margin-top:1rem;"></iframe>
