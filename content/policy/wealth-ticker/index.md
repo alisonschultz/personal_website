@@ -1,7 +1,7 @@
 ---
 title: "Billionaire Wealth Ticker"
 date: 2026-05-08
-weight: 80
+weight: 5
 tags: ["wealth tax", "inequality"]
 description: "An interactive counter showing how fast a billionaire's fortune grows."
 summary: "A small interactive piece: a live counter showing how much Lidl founder Dieter Schwarz's fortune has grown while you watch — a back-of-the-envelope illustration of how quickly large fortunes compound when left untaxed."
