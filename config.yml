@@ -62,6 +62,8 @@ params:
               url: policy/
             - name: Media
               url: media/
+            - name: Wealth ticker
+              url: wealth-ticker/
 
     socialIcons:
         - name: CV
