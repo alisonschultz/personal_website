@@ -5,7 +5,7 @@ weight: 20
 tags: ["conflict","organ trafficking","illicit finance"]
 author: ["Alison Schultz"]
 description: "Revise and Resubmit at the Journal of the European Economic Association. Young Economist Award."
-venue: "Revise and Resubmit, Journal of the European Economic Association — EEA Young Economist Award 2022"
+venue: "Revise and Resubmit, Journal of the European Economic Association. EEA Young Economist Award 2022"
 summary: "Higher US kidney demand increases violent attacks near transplant hospitals in known transplant-tourism destinations. The pattern suggests that non-state armed groups exploit transplant tourism to finance their operations."
 editPost:
     URL: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4045584"

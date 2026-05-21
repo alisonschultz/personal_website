@@ -26,7 +26,7 @@ menu:
           weight: 4
 
 params:
-    description: "Alison Schultz — financial economist at the Tax Justice Network. Research on financial markets, financial crime, corporate taxation, wealth taxes, and tax abuse."
+    description: "Alison Schultz, financial economist at the Tax Justice Network. Research on financial markets, financial crime, corporate taxation, wealth taxes, and tax abuse."
     author: Alison Schultz
     DateFormat: "January 2006"
     defaultTheme: light

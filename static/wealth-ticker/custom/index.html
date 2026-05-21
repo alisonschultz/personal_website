@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<title>Vermögens-Ticker — anpassbar</title>
+<title>Vermögens-Ticker: anpassbar</title>
 <style>
   :root {
     --bg: #0b0b0d;
@@ -344,9 +344,9 @@
     <button type="button" data-lang="en">EN</button>
   </div>
 
-  <h1 data-i18n="h1">Vermögens-Ticker — eigene Werte</h1>
+  <h1 data-i18n="h1">Vermögens-Ticker: eigene Werte</h1>
   <p class="lede" data-i18n="lede">
-    Der Ticker zeigt live, wie das Vermögen einer reichen Person wächst — z.&nbsp;B. während
+    Der Ticker zeigt live, wie das Vermögen einer reichen Person wächst, z.&nbsp;B. während
     eines Vortrags. Optional vergleicht er das mit deinem eigenen Verdienst und der
     Steuerlast in derselben Zeit. Trag unten deine Werte ein, starte die Vorschau, und
     kopiere den Link zum Teilen oder als Lesezeichen.
@@ -365,7 +365,7 @@
     <fieldset>
       <legend data-i18n="fsWealth">Vermögen</legend>
       <p class="sub" data-i18n="subWealth">
-        Zwei Vermögensstände, aus denen die jährliche Wachstumsrate berechnet wird —
+        Zwei Vermögensstände, aus denen die jährliche Wachstumsrate berechnet wird,
         z.&nbsp;B. die Forbes-Werte für zwei aufeinanderfolgende Jahre.
       </p>
       <div class="grid-2">
@@ -390,7 +390,7 @@
         Werte in der Währung eintragen, die du unten einstellst. Der Ticker rechnet unter
         Annahme von exponentiellem Wachstum (also einer festen jährlichen Wachstumsrate)
         zwischen den beiden Werten hoch. Vermögen von Milliardär:innen findest du z.&nbsp;B. bei
-        <a href="https://www.forbes.com/billionaires/" target="_blank" rel="noopener">Forbes — The World's Billionaires</a>
+        <a href="https://www.forbes.com/billionaires/" target="_blank" rel="noopener">Forbes: The World's Billionaires</a>
         oder live bei
         <a href="https://www.forbes.com/real-time-billionaires/" target="_blank" rel="noopener">Forbes Real-Time Billionaires</a>.
       </p>
@@ -410,7 +410,7 @@
 
     <fieldset>
       <legend data-i18n="fsFormat">Anzeige-Format</legend>
-      <p class="sub" data-i18n="subFormat">Wie Geldbeträge dargestellt werden — Währungssymbol, Tausender-Trennzeichen, Sprache.</p>
+      <p class="sub" data-i18n="subFormat">Wie Geldbeträge dargestellt werden: Währungssymbol, Tausender-Trennzeichen, Sprache.</p>
       <div class="grid-2">
         <label>
           <span class="lbl-text" data-i18n="lblCurrency">Währung (ISO-Code, z.&nbsp;B. EUR, USD, GBP)</span>
@@ -426,7 +426,7 @@
     <fieldset>
       <legend data-i18n="fsCompare">Vergleich mit eigenem Verdienst und Besteuerung (optional)</legend>
       <p class="sub" data-i18n="subCompare">
-        Stellt deinem Verdienst während der Redezeit den Vermögenszuwachs der Person gegenüber —
+        Stellt deinem Verdienst während der Redezeit den Vermögenszuwachs der Person gegenüber,
         und zeigt, wie viel Steuer auf beiden Seiten anfällt. Erscheint, sobald du den Ticker
         pausierst (Klick oder Leertaste).
       </p>
@@ -436,7 +436,7 @@
       </label>
       <div class="grid-2">
         <label>
-          <span class="lbl-text" data-i18n="lblPersonTax">Effektiver Steuersatz der Person (0–1, z.&nbsp;B. 0 = unversteuert, 0.26 = ⌀ dt. Milliardäre)</span>
+          <span class="lbl-text" data-i18n="lblPersonTax">Effektiver Steuersatz der Person (0 to 1, z.&nbsp;B. 0 = unversteuert, 0.26 = ⌀ dt. Milliardäre)</span>
           <input type="number" name="taxRate" value="0" step="0.01" min="0" max="1">
         </label>
         <label>
@@ -444,7 +444,7 @@
           <input type="number" name="userHourly" value="27.80" step="0.01">
         </label>
         <label>
-          <span class="lbl-text" data-i18n="lblUserTax">Dein Steuer- + Sozialabgabensatz (0–1, z.&nbsp;B. 0.32)</span>
+          <span class="lbl-text" data-i18n="lblUserTax">Dein Steuer- + Sozialabgabensatz (0 to 1, z.&nbsp;B. 0.32)</span>
           <input type="number" name="userTaxRate" value="0.323" step="0.01" min="0" max="1">
         </label>
       </div>
@@ -505,37 +505,37 @@
   const I18N = {
     de: {
       htmlLang: 'de',
-      title: 'Vermögens-Ticker — anpassbar',
-      h1: 'Vermögens-Ticker — eigene Werte',
-      lede: 'Der Ticker zeigt live, wie das Vermögen einer reichen Person wächst — z.&nbsp;B. während eines Vortrags. Optional vergleicht er das mit deinem eigenen Verdienst und der Steuerlast in derselben Zeit. Trag unten deine Werte ein, starte die Vorschau, und kopiere den Link zum Teilen oder als Lesezeichen.',
+      title: 'Vermögens-Ticker: anpassbar',
+      h1: 'Vermögens-Ticker: eigene Werte',
+      lede: 'Der Ticker zeigt live, wie das Vermögen einer reichen Person wächst, z.&nbsp;B. während eines Vortrags. Optional vergleicht er das mit deinem eigenen Verdienst und der Steuerlast in derselben Zeit. Trag unten deine Werte ein, starte die Vorschau, und kopiere den Link zum Teilen oder als Lesezeichen.',
       fsPerson: 'Person',
       subPerson: 'Wessen Vermögensentwicklung soll gezeigt werden?',
       lblName: 'Name (so wie er im Ticker erscheinen soll)',
       fsWealth: 'Vermögen',
-      subWealth: 'Zwei Vermögensstände, aus denen die jährliche Wachstumsrate berechnet wird — z.&nbsp;B. die Forbes-Werte für zwei aufeinanderfolgende Jahre.',
+      subWealth: 'Zwei Vermögensstände, aus denen die jährliche Wachstumsrate berechnet wird, z.&nbsp;B. die Forbes-Werte für zwei aufeinanderfolgende Jahre.',
       lblY1: 'Jahr 1',
       lblW1: 'Vermögen Jahr 1 (in Mrd.)',
       lblY2: 'Jahr 2',
       lblW2: 'Vermögen Jahr 2 (in Mrd.)',
-      helpWealth: 'Werte in der Währung eintragen, die du unten einstellst. Der Ticker rechnet unter Annahme von exponentiellem Wachstum (also einer festen jährlichen Wachstumsrate) zwischen den beiden Werten hoch. Vermögen von Milliardär:innen findest du z.&nbsp;B. bei <a href="https://www.forbes.com/billionaires/" target="_blank" rel="noopener">Forbes — The World\'s Billionaires</a> oder live bei <a href="https://www.forbes.com/real-time-billionaires/" target="_blank" rel="noopener">Forbes Real-Time Billionaires</a>.',
+      helpWealth: 'Werte in der Währung eintragen, die du unten einstellst. Der Ticker rechnet unter Annahme von exponentiellem Wachstum (also einer festen jährlichen Wachstumsrate) zwischen den beiden Werten hoch. Vermögen von Milliardär:innen findest du z.&nbsp;B. bei <a href="https://www.forbes.com/billionaires/" target="_blank" rel="noopener">Forbes: The World\'s Billionaires</a> oder live bei <a href="https://www.forbes.com/real-time-billionaires/" target="_blank" rel="noopener">Forbes Real-Time Billionaires</a>.',
       fsSpeaker: 'Du als Redner:in',
       subSpeaker: 'Wie soll der Ticker dich ansprechen? Wird im Hinweistext „🥱 <em>Sie</em> redet schon seit …" verwendet.',
       lblPronoun: 'Pronomen (z.&nbsp;B. Sie, Er, They)',
       fsFormat: 'Anzeige-Format',
-      subFormat: 'Wie Geldbeträge dargestellt werden — Währungssymbol, Tausender-Trennzeichen, Sprache.',
+      subFormat: 'Wie Geldbeträge dargestellt werden: Währungssymbol, Tausender-Trennzeichen, Sprache.',
       lblCurrency: 'Währung (ISO-Code, z.&nbsp;B. EUR, USD, GBP)',
       lblLocale: 'Sprache/Region (z.&nbsp;B. de-DE, en-US)',
       fsCompare: 'Vergleich mit eigenem Verdienst und Besteuerung (optional)',
-      subCompare: 'Stellt deinem Verdienst während der Redezeit den Vermögenszuwachs der Person gegenüber — und zeigt, wie viel Steuer auf beiden Seiten anfällt. Erscheint, sobald du den Ticker pausierst (Klick oder Leertaste).',
+      subCompare: 'Stellt deinem Verdienst während der Redezeit den Vermögenszuwachs der Person gegenüber, und zeigt, wie viel Steuer auf beiden Seiten anfällt. Erscheint, sobald du den Ticker pausierst (Klick oder Leertaste).',
       lblCompareToggle: 'Vergleich aktivieren',
-      lblPersonTax: 'Effektiver Steuersatz der Person (0–1, z.&nbsp;B. 0 = unversteuert, 0.26 = ⌀ dt. Milliardäre)',
+      lblPersonTax: 'Effektiver Steuersatz der Person (0 to 1, z.&nbsp;B. 0 = unversteuert, 0.26 = ⌀ dt. Milliardäre)',
       lblHourly: 'Dein Bruttostundenlohn (z.&nbsp;B. 27.80)',
-      lblUserTax: 'Dein Steuer- + Sozialabgabensatz (0–1, z.&nbsp;B. 0.32)',
+      lblUserTax: 'Dein Steuer- + Sozialabgabensatz (0 to 1, z.&nbsp;B. 0.32)',
       helpCompare: 'Deinen eigenen Steuersatz inkl. Sozialabgaben kannst du z.&nbsp;B. mit dem <a href="https://www.bmf-steuerrechner.de/ekst/eingabeformekst.xhtml" target="_blank" rel="noopener">Einkommensteuer-Rechner des BMF</a> oder einem Brutto-Netto-Rechner wie <a href="https://www.brutto-netto-rechner.info/" target="_blank" rel="noopener">brutto-netto-rechner.info</a> ermitteln.',
       btnPreview: 'Vorschau starten',
       btnCopy: 'Link kopieren',
       statusCopied: 'Link kopiert ✓',
-      statusFail: 'Kopieren fehlgeschlagen — Link unten manuell markieren.',
+      statusFail: 'Kopieren fehlgeschlagen: Link unten manuell markieren.',
       kbdHint: 'Tipp: Im laufenden Ticker pausiert ein Klick oder die <kbd>Leertaste</kbd> die Anzeige (so erscheint die Vergleichs-Box).',
       counterLabel: 'Geschätzter Vermögenszuwachs',
       counterAssumptions: 'bei angenommenem exponentiellem Wachstum (also einer festen jährlichen Wachstumsrate) aus zwei Datenpunkten',
@@ -555,37 +555,37 @@
     },
     en: {
       htmlLang: 'en',
-      title: 'Wealth Ticker — customizable',
-      h1: 'Wealth Ticker — your values',
-      lede: 'The ticker shows live how a wealthy person\'s fortune grows — e.&nbsp;g. during a talk. It can also compare this with your own earnings and tax burden over the same time. Enter your values below, start the preview, and copy the link to share or bookmark.',
+      title: 'Wealth Ticker: customizable',
+      h1: 'Wealth Ticker: your values',
+      lede: 'The ticker shows live how a wealthy person\'s fortune grows, e.&nbsp;g. during a talk. It can also compare this with your own earnings and tax burden over the same time. Enter your values below, start the preview, and copy the link to share or bookmark.',
       fsPerson: 'Person',
       subPerson: 'Whose wealth growth should be shown?',
       lblName: 'Name (as it appears in the ticker)',
       fsWealth: 'Wealth',
-      subWealth: 'Two wealth values used to compute the annual growth rate — e.&nbsp;g. Forbes figures for two consecutive years.',
+      subWealth: 'Two wealth values used to compute the annual growth rate, e.&nbsp;g. Forbes figures for two consecutive years.',
       lblY1: 'Year 1',
       lblW1: 'Wealth in year 1 (in billion)',
       lblY2: 'Year 2',
       lblW2: 'Wealth in year 2 (in billion)',
-      helpWealth: 'Enter values in the currency you choose below. The ticker assumes exponential growth (a fixed annual growth rate) between the two values. You can find billionaires\' wealth at <a href="https://www.forbes.com/billionaires/" target="_blank" rel="noopener">Forbes — The World\'s Billionaires</a> or live at <a href="https://www.forbes.com/real-time-billionaires/" target="_blank" rel="noopener">Forbes Real-Time Billionaires</a>.',
+      helpWealth: 'Enter values in the currency you choose below. The ticker assumes exponential growth (a fixed annual growth rate) between the two values. You can find billionaires\' wealth at <a href="https://www.forbes.com/billionaires/" target="_blank" rel="noopener">Forbes: The World\'s Billionaires</a> or live at <a href="https://www.forbes.com/real-time-billionaires/" target="_blank" rel="noopener">Forbes Real-Time Billionaires</a>.',
       fsSpeaker: 'You as the speaker',
       subSpeaker: 'How should the ticker refer to you? Used in the hint "🥱 <em>She</em> has been talking for …".',
       lblPronoun: 'Pronoun (e.&nbsp;g. She, He, They)',
       fsFormat: 'Display format',
-      subFormat: 'How money values are displayed — currency symbol, thousands separator, language.',
+      subFormat: 'How money values are displayed: currency symbol, thousands separator, language.',
       lblCurrency: 'Currency (ISO code, e.&nbsp;g. EUR, USD, GBP)',
       lblLocale: 'Language/region (e.&nbsp;g. de-DE, en-US)',
       fsCompare: 'Comparison with your earnings and taxes (optional)',
-      subCompare: 'Puts your earnings during the talk next to the person\'s wealth gain — and shows the tax burden on each side. Appears as soon as you pause the ticker (click or Space).',
+      subCompare: 'Puts your earnings during the talk next to the person\'s wealth gain, and shows the tax burden on each side. Appears as soon as you pause the ticker (click or Space).',
       lblCompareToggle: 'Enable comparison',
-      lblPersonTax: 'Effective tax rate on the person\'s wealth gain (0–1, e.&nbsp;g. 0 = untaxed, 0.26 = avg. German billionaires)',
+      lblPersonTax: 'Effective tax rate on the person\'s wealth gain (0 to 1, e.&nbsp;g. 0 = untaxed, 0.26 = avg. German billionaires)',
       lblHourly: 'Your gross hourly wage (e.&nbsp;g. 27.80)',
-      lblUserTax: 'Your income tax + payroll rate (0–1, e.&nbsp;g. 0.32)',
+      lblUserTax: 'Your income tax + payroll rate (0 to 1, e.&nbsp;g. 0.32)',
       helpCompare: 'You can find your tax + payroll rate using e.&nbsp;g. <a href="https://smartasset.com/taxes/income-taxes" target="_blank" rel="noopener">SmartAsset (US)</a> or <a href="https://www.gov.uk/estimate-income-tax" target="_blank" rel="noopener">HMRC Income Tax Estimator (UK)</a>.',
       btnPreview: 'Start preview',
       btnCopy: 'Copy link',
       statusCopied: 'Link copied ✓',
-      statusFail: 'Copy failed — please mark the link below manually.',
+      statusFail: 'Copy failed: please mark the link below manually.',
       kbdHint: 'Tip: While the ticker is running, click or press <kbd>Space</kbd> to pause (the comparison box appears then).',
       counterLabel: 'Estimated wealth growth',
       counterAssumptions: 'assuming exponential growth (i.&nbsp;e. a constant annual growth rate) from two data points',

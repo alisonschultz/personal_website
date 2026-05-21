@@ -22,5 +22,5 @@ editPost:
 
 ##### Coverage
 
-- *Le Monde*, 20 Sep 2023 — [A European tax on the super-rich could bring in over €200 billion a year](https://www.lemonde.fr/en/economy/article/2023/09/20/a-european-tax-on-the-super-rich-could-bring-in-over-200-billion-a-year_6137895_19.html).
-- *Tax Notes*, 21 Sep 2023 — [Tax Justice Network Suggests an EU Wealth Tax Similar to Spain's](https://www.taxnotes.com/featured-news/tax-justice-network-suggests-eu-wealth-tax-similar-spains/2023/09/20/7hcmr).
+- *Le Monde*, 20 Sep 2023. [A European tax on the super-rich could bring in over €200 billion a year](https://www.lemonde.fr/en/economy/article/2023/09/20/a-european-tax-on-the-super-rich-could-bring-in-over-200-billion-a-year_6137895_19.html).
+- *Tax Notes*, 21 Sep 2023. [Tax Justice Network Suggests an EU Wealth Tax Similar to Spain's](https://www.taxnotes.com/featured-news/tax-justice-network-suggests-eu-wealth-tax-similar-spains/2023/09/20/7hcmr).
