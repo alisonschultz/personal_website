@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Ce que la France perd en un an à cause des abus fiscaux</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+/* Shared base of the Africa figure pages: TJN brand tokens for both themes, the page frame, type and controls. Each
+   page adds the styles of its own figure. */
+:root {
+  --bg: #FCFCFA; --panel: #F2F3EF; --ink: #1B2023; --ink-2: #454E52; --muted: #687075; --rule: #D9DDD9;
+  --blue: #586AAD; --blue-soft: #DEE2F1; --gold: #FFD371; --gold-soft: #FFF3D1; --gold-ink: #6B5100;
+  --green: #50805E; --green-soft: #DCE9DF; --grey: #C9CED0; --land: #E2E5E1; --land-edge: #C7CCC8;
+  --tip: #1B2023; --tip-fg: #FFFFFF;
+  --font: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #15191B; --panel: #1D2326; --ink: #EDEFEC; --ink-2: #C3C9CA; --muted: #959EA1; --rule: #30393C;
+  --blue: #8293E2; --blue-soft: #262D45; --gold: #FFD371; --gold-soft: #33291A; --gold-ink: #FFD371;
+  --green: #7FB08E; --green-soft: #22362A; --grey: #59636A; --land: #283034; --land-edge: #3A4448;
+  --tip: #EDEFEC; --tip-fg: #15191B;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #15191B; --panel: #1D2326; --ink: #EDEFEC; --ink-2: #C3C9CA; --muted: #959EA1; --rule: #30393C;
+  --blue: #8293E2; --blue-soft: #262D45; --gold: #FFD371; --gold-soft: #33291A; --gold-ink: #FFD371;
+  --green: #7FB08E; --green-soft: #22362A; --grey: #59636A; --land: #283034; --land-edge: #3A4448;
+  --tip: #EDEFEC; --tip-fg: #15191B;
+  color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 15px; line-height: 1.5 }
+p { margin: 0 }
+a { color: inherit; text-underline-offset: 2px }
+.fig { max-width: 980px; margin: 0 auto; padding-block: 24px 32px; display: flex; flex-direction: column; gap: 18px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.kicker { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2) }
+.kicker b { color: var(--gold-ink); font-weight: 700 }
+h1 { margin: 6px 0 0; font-size: clamp(22px, 3.4vw, 32px); line-height: 1.12; font-weight: 800; letter-spacing: -.01em;
+  text-wrap: balance; max-width: 32ch }
+.sub { margin-top: 8px; color: var(--ink-2); font-size: 16px; max-width: 62ch }
+.note { font-size: 12.5px; color: var(--muted); max-width: 78ch; line-height: 1.45 }
+.num { font-variant-numeric: tabular-nums }
+.controls { display: flex; flex-wrap: wrap; gap: 8px }
+.controls button { font: 600 14px/1 var(--font); color: var(--ink); background: var(--bg); border: 1.5px solid var(--ink);
+  border-radius: 999px; padding: 9px 16px; cursor: pointer }
+.controls button[aria-pressed="true"] { background: var(--ink); color: var(--bg) }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px }
+.tip { position: fixed; pointer-events: none; z-index: 20; max-width: 260px; background: var(--tip); color: var(--tip-fg);
+  font-size: 13px; line-height: 1.35; padding: 8px 10px; border-radius: 6px; box-shadow: 0 4px 14px rgba(0, 0, 0, .18) }
+
+/* The year of a single country, in the country's language: the title, which says whose tax abuse the losses come from,
+   then the year as one long track from January to December that fills with the losses. Numbered marks, with their
+   callouts above the track on wide screens and as a numbered list under it on narrow ones. Marks can lie close
+   together, so the script places each callout on one of three levels and to the left or the right of its stem, such
+   that no two callouts touch and no stem runs through a callout. Where no such placement fits the width, the page
+   shows the list. The months, the button, the dates and the sources come with the data. No intro and no method text:
+   the title carries the explanation. The page rests on the whole year. The button lets the year pass again. */
+.year { display: flex; flex-direction: column; gap: 8px; margin-top: 6px }
+.callouts { position: relative; height: 300px }
+.co { position: absolute; bottom: 0; padding: 0 12px 12px 0; border-right: 2px solid var(--ink); text-align: right;
+  transform: translateX(-100%); transition: opacity .35s }
+.co.r { transform: none; padding: 0 0 12px 12px; border-right: 0; border-left: 2px solid var(--ink); text-align: left }
+.co .d { display: block; font-weight: 800; font-size: 16px }
+.co .a { display: block; font-weight: 700; font-size: 15px }
+.co .t { display: block; margin-top: 2px; font-size: 13.5px; line-height: 1.35; color: var(--ink-2) }
+.off { opacity: .22 }
+.track { position: relative; height: 22px; background: var(--panel); border: 1px solid var(--rule); border-radius: 4px }
+.fill { position: absolute; inset: 0 auto 0 0; width: 100%; background: var(--blue); border-radius: 3px 0 0 3px }
+.mk { position: absolute; z-index: 2; top: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%;
+  background: var(--bg); border: 2.5px solid var(--ink); font: 700 11px/17px var(--font); text-align: center; color: var(--ink) }
+.mk.done { background: var(--ink); color: var(--bg) }
+.months { position: relative; height: 18px; margin-top: 4px; font-size: 11.5px; color: var(--muted) }
+.months span { position: absolute; transform: translateX(3px) }
+.months span::before { content: ""; position: absolute; left: -3px; top: -5px; height: 5px; border-left: 1px solid var(--rule) }
+.head { position: absolute; z-index: 3; top: -24px; transform: translateX(-50%); font-size: 12px; font-weight: 700; white-space: nowrap;
+  color: var(--ink) }
+.list { display: none; list-style: none; margin: 8px 0 0; padding: 0; gap: 12px }
+.list li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 10px; align-items: start; transition: opacity .35s }
+.list .n { width: 22px; height: 22px; border-radius: 50%; background: var(--ink); color: var(--bg); font: 700 11px/22px var(--font); text-align: center }
+.list .d { font-weight: 800 }
+.list .t { color: var(--ink-2); font-size: 14px }
+.year.stack .callouts { display: none }
+.year.stack .list { display: grid }
+@media (max-width: 860px) { .callouts { display: none } .list { display: grid } }
+</style>
+</head>
+<body>
+<div class="fig">
+  <header>
+    <p class="kicker" id="kicker"></p>
+    <h1 id="title"></h1>
+  </header>
+  <div class="controls"><button type="button" id="play"></button></div>
+  <div class="year" id="year">
+    <div class="callouts" id="callouts"></div>
+    <div class="track" id="track"><div class="fill" id="fill"></div></div>
+    <div class="months" id="months"></div>
+    <ol class="list" id="list"></ol>
+  </div>
+  <p class="note" id="src"></p>
+</div>
+
+<script>
+const D = {"kicker": "Justice Fiscale : État des Lieux 2026 · France", "year_view": {"title": "Ce que la France perd en un an à cause des abus fiscaux des multinationales et des particuliers fortunés", "months": ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"], "months_short": ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."], "first": "1er", "play": "Faire défiler l'année", "colon": " :", "marks": [{"x": 15.48, "date": "16 janvier", "amount": "1,2 milliard d'euros", "text": "toute la subvention de l'État à l'Anah, qui finance MaPrimeRénov', prévue pour 2027 : 217 millions d'euros de moins qu'en 2026"}, {"x": 56.48, "date": "26 février", "amount": "4,5 milliards d'euros", "text": "ce que l'État prévoit d'investir chaque année dans le réseau ferroviaire, mais seulement à partir de 2028"}, {"x": 125.52, "date": "6 mai", "amount": "10 milliards d'euros", "text": "ce que réclament lycéens et étudiants pour rénover les établissements, avoir un professeur dans chaque classe et des places à l'université"}, {"x": 225.94, "date": "14 août", "amount": "18 milliards d'euros", "text": "le minimum de dépenses publiques supplémentaires dont la France aura besoin en 2030 pour tenir ses objectifs climatiques"}, {"x": 365.0, "date": "31 décembre", "amount": "29,1 milliards d'euros", "text": "presque toute la dette des hôpitaux publics : 30 milliards d'euros fin 2025"}], "sources": "Sources : Tax Justice Network, Justice Fiscale : État des Lieux 2026, 29,1 milliards d'euros par an (2023, aux prix de 2025), répartis uniformément sur l'année. Anah : <a href=\"https://www.assemblee-nationale.fr/dyn/contenu/visualisation/1128212/file/PAP%202027%20-%20Coh%C3%A9sion%20des%20territoires.pdf\">projet annuel de performances 2027<\/a>, Cohésion des territoires, p. 108. Réseau ferroviaire : <a href=\"https://www.ecologie.gouv.fr/presse/contrat-performance-letat-sncf-reseau-face-lenvie-trains-francais-engagement-inedit-reseau\">ministère de la Transition écologique<\/a>, 2 juin 2026. Lycéens et étudiants : franceinfo, <a href=\"https://www.franceinfo.fr/societe/education/blocage-des-lycees/les-lyceens-demandent-10-milliards-d-euros-au-gouvernement-tres-concretement-ce-sont-des-choix-politiques-resume-ian-brossat-senateur-pcf-de-paris_8227333.html\">7<\/a> et <a href=\"https://www.franceinfo.fr/societe/education/blocage-des-lycees/mobilisation-de-la-jeunesse-retour-des-gilets-jaunes-appel-de-l-intersyndicale-on-vous-resume-les-revendications-et-la-reponse-du-gouvernement_8248597.html\">24 octobre 2026<\/a>. Le gouvernement a répondu le 26 octobre par jusqu'à 4 milliards d'euros de prêts d'ici 2030 et un plan d'un milliard d'euros pour les universités (<a href=\"https://www.education.gouv.fr/sites/default/files/document/lyc-ens-tudiants-ce-qui-change-pour-vous-521799.pdf\">ministère de l’Éducation nationale<\/a>, p. 13–14). Climat : I4CE, <a href=\"https://www.i4ce.org/wp-content/uploads/2025/07/Panorama-des-financements-climat-ed-2025_Synthese-et-resultats.pdf\">Panorama des financements climat<\/a>, édition 2025, p. 4, de 18 à 52 milliards d'euros selon les mesures. Hôpitaux : Drees, <a href=\"https://drees.solidarites-sante.gouv.fr/publications-communique-de-presse/etudes-et-resultats/260728-deficit-des-hopitaux-publics\">Études et Résultats n° 1380<\/a>, juillet 2026, p. 7."}};
+const $ = id => document.getElementById(id);
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const Y = D.year_view;
+const MONTHS = Y.months, SHORT = Y.months_short, COLON = Y.colon || ":";
+const DAYS = 365, mdays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const dateOf = x => { let m = 0, d = Math.floor(x); while (m < 11 && d >= mdays[m]) { d -= mdays[m]; m++ } return `${d === 0 && Y.first ? Y.first : d + 1} ${MONTHS[m]}` };
+$("kicker").innerHTML = D.kicker;
+$("title").textContent = Y.title;
+$("play").textContent = Y.play;
+$("src").innerHTML = Y.sources || "";
+
+let acc = 0;
+mdays.forEach((n, m) => {
+  const s = document.createElement("span");
+  s.style.left = (acc / DAYS * 100) + "%"; s.textContent = SHORT[m];
+  $("months").appendChild(s); acc += n;
+});
+const marks = Y.marks.map((k, i) => {
+  const x = k.x / DAYS * 100;                                        // the moment of the year at which the running total passes the mark
+  const mk = document.createElement("div"); mk.className = "mk"; mk.style.left = x + "%"; mk.textContent = i + 1;
+  $("track").appendChild(mk);
+  const co = document.createElement("div"); co.className = "co"; co.style.left = x + "%";
+  co.innerHTML = `<span class="d">${k.date}</span><span class="a num">${k.amount}</span><span class="t">${k.text}</span>`;
+  $("callouts").appendChild(co);
+  const li = document.createElement("li");
+  li.innerHTML = `<span class="n">${i + 1}</span><span><span class="d">${k.date}</span>${COLON} <b class="num">${k.amount}</b><br><span class="t">${k.text}</span></span>`;
+  $("list").appendChild(li);
+  return { x: k.x, mk, co, li };
+});
+
+// Placement of the callouts. Each one stands on level 0, 1 or 2 above the track and to the left or the right of its
+// stem. Callouts on the same level keep a gap between them, and the stem of a higher callout must not run through a
+// lower one. For a given callout width, I take among the placements that fit the one with the fewest levels, then the
+// lowest callouts, then the most callouts to the right of their stems, so that the text reads on from its date. I try
+// a few widths and keep the one that gives the lowest figure, the wider one when two are about as low.
+const GAP = 14, MARGIN = 10, LEVELS = 3, WIDTHS = [240, 220, 200, 185, 170];
+function solve(cw, xs, W) {
+  const n = xs.length, pick = [];
+  let best = null;
+  (function walk(i) {
+    if (i === n) {
+      const lv = pick.map(p => p.lv), score = 100 * Math.max(...lv) + 10 * lv.reduce((a, b) => a + b, 0)
+        + pick.filter(p => !p.right).length;
+      if (!best || score < best.score) best = { score, pick: pick.map(p => ({ ...p })) };
+      return;
+    }
+    for (let lv = 0; lv < LEVELS; lv++) for (const right of [true, false]) {
+      const b = right ? [xs[i], xs[i] + cw] : [xs[i] - cw, xs[i]];
+      if (b[0] < 0 || b[1] > W) continue;
+      let ok = true;
+      for (let j = 0; j < i && ok; j++) {
+        const q = pick[j];
+        if (q.lv === lv && b[0] < q.b[1] + GAP && q.b[0] < b[1] + GAP) ok = false;
+        else if (lv > q.lv && xs[i] > q.b[0] - MARGIN && xs[i] < q.b[1] + MARGIN) ok = false;
+        else if (q.lv > lv && xs[j] > b[0] - MARGIN && xs[j] < b[1] + MARGIN) ok = false;
+      }
+      if (!ok) continue;
+      pick[i] = { lv, right, b };
+      walk(i + 1);
+    }
+  })(0);
+  return best;
+}
+function apply(best, cw) {                                           // returns the height the callouts need
+  marks.forEach((m, i) => {
+    m.co.classList.toggle("r", best.pick[i].right);
+    m.co.style.width = cw + "px";
+    m.co.style.paddingBottom = "12px";
+  });
+  const tall = Array(LEVELS).fill(0);                                // each level starts above the tallest callout below it
+  marks.forEach((m, i) => { const lv = best.pick[i].lv; tall[lv] = Math.max(tall[lv], m.co.offsetHeight) });
+  const base = [0];
+  for (let k = 1; k < LEVELS; k++) base[k] = base[k - 1] + (tall[k - 1] ? tall[k - 1] + 10 : 0);
+  let top = 0;
+  marks.forEach((m, i) => {
+    m.co.style.paddingBottom = (12 + base[best.pick[i].lv]) + "px";
+    top = Math.max(top, m.co.offsetHeight);
+  });
+  return top;
+}
+function layout() {
+  const box = $("callouts");
+  $("year").classList.remove("stack");
+  const W = box.clientWidth;
+  if (!W || getComputedStyle(box).display === "none") return;
+  const xs = marks.map(m => m.x / DAYS * W);
+  let choice = null;
+  for (const cw of WIDTHS.filter(c => c <= W * 0.3)) {
+    const best = solve(cw, xs, W);
+    if (!best) continue;
+    const h = apply(best, cw);
+    if (!choice || h < choice.h - 12) choice = { h, best, cw };
+  }
+  if (!choice) { $("year").classList.add("stack"); return }
+  box.style.height = (apply(choice.best, choice.cw) + 16) + "px";
+}
+
+const head = document.createElement("div"); head.className = "head"; head.hidden = true; $("track").appendChild(head);
+function show(x) {                                                   // x: days since 1 January, from 0 to 365
+  $("fill").style.width = (x / DAYS * 100) + "%";
+  for (const m of marks) {
+    const on = x >= m.x - 1e-6;
+    m.mk.classList.toggle("done", on); m.co.classList.toggle("off", !on); m.li.classList.toggle("off", !on);
+  }
+  head.style.left = (x / DAYS * 100) + "%";
+  head.textContent = dateOf(Math.min(x, DAYS - 0.001));
+}
+let t0 = null;
+function frame(t) {
+  if (t0 === null) return;
+  const f = Math.min(1, (t - t0) / 9000);
+  show(f * DAYS);
+  if (f < 1) requestAnimationFrame(frame); else { t0 = null; head.hidden = true }
+}
+$("play").addEventListener("click", () => {
+  if (reduce) { show(DAYS); return }
+  head.hidden = false; t0 = performance.now(); requestAnimationFrame(frame);
+});
+let queued = false;
+window.addEventListener("resize", () => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; layout() }) } });
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+layout();
+show(DAYS);
+</script>
+
+</body>
+</html>
